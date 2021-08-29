@@ -19,11 +19,6 @@ export const DraftEditor = (): JSX.Element => {
   });
 
   useEffect(() => {
-    console.log(blockButton);
-    console.log(toggleButton);
-  }, [blockButton, toggleButton]);
-
-  useEffect(() => {
     const inlineStyle = editorState.getCurrentInlineStyle();
 
     const BOLD = inlineStyle.has('BOLD');
@@ -59,8 +54,8 @@ export const DraftEditor = (): JSX.Element => {
       },
     };
 
-    // setHtml(stateToHTML(editorState.getCurrentContent(), options));
-  }, [editorState]); // setHtml
+    console.log(stateToHTML(editorState.getCurrentContent(), options));
+  }, [editorState]);
 
   const handleKeyCommand = (command: DraftEditorCommand) => {
     const newState = RichUtils.handleKeyCommand(editorState, command);
@@ -119,70 +114,49 @@ export const DraftEditor = (): JSX.Element => {
 
   return (
     <div className="editor-container">
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          marginBottom: '10px',
-        }}
-      >
+      <div className="toolbar-container">
         <div>
           {blockButtonOptions.map((buttonOption, index) => (
             <button
+              className="toolbar-inner"
               onMouseDown={(e) => handleBlockClick(e, buttonOption.action)}
               key={index}
               style={
                 buttonOption.action === blockButton
                   ? {
                       backgroundColor: '#c8c9ff',
-                      border: 'none',
-                      padding: '4px',
                     }
                   : {
                       backgroundColor: '#fff',
-                      border: 'none',
-                      padding: '4px',
                     }
               }
             >
-              <img
-                src={`/assets/icons/${buttonOption.name}`}
-                alt=""
-                style={{ width: '24px', height: '24px' }}
-              />
+              <img src={`/assets/icons/${buttonOption.name}`} alt="" />
             </button>
           ))}
         </div>
         <div>
           {toggleButtonOptions.map((buttonOption, index) => (
             <button
+              className="toolbar-inner"
               onMouseDown={(e) => handleTogggleClick(e, buttonOption.action)}
               key={index}
               style={
                 toggleButton[buttonOption.action] === true
                   ? {
                       backgroundColor: '#c8c9ff',
-                      border: 'none',
-                      padding: '4px',
                     }
                   : {
                       backgroundColor: '#fff',
-                      border: 'none',
-                      padding: '4px',
                     }
               }
             >
-              <img
-                src={`/assets/icons/${buttonOption.name}`}
-                alt=""
-                style={{ width: '24px', height: '24px' }}
-              />
+              <img src={`/assets/icons/${buttonOption.name}`} alt="" />
             </button>
           ))}
         </div>
       </div>
-      <div>
+      <div className="editor-inner">
         <Editor
           editorState={editorState}
           onChange={setEditorState}

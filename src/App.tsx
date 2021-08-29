@@ -1,16 +1,9 @@
+import './styles/scss/style.css';
+
 import { DraftEditor } from './components/draft/DraftEditor';
-import { Pane } from './components/pane/Pane';
-import { View } from './components/view/View';
 
 function App() {
-  return (
-    <>
-      <Pane>
-        <DraftEditor />
-        <View />
-      </Pane>
-    </>
-  );
+  return <DraftEditor />;
 }
 
 export default App;
