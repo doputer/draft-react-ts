@@ -1,0 +1,9 @@
+.editor-container {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  border-right: '1px solid black';
+  height: '100vh';
+  padding: '10px';
+}
+/*# sourceMappingURL=style.css.map */
