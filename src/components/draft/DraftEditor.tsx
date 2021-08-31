@@ -124,7 +124,7 @@ export const DraftEditor = (): JSX.Element => {
               style={
                 buttonOption.action === blockButton
                   ? {
-                      backgroundColor: '#c8c9ff',
+                      backgroundColor: '#c1c1c1',
                     }
                   : {
                       backgroundColor: '#fff',
@@ -144,7 +144,7 @@ export const DraftEditor = (): JSX.Element => {
               style={
                 toggleButton[buttonOption.action] === true
                   ? {
-                      backgroundColor: '#c8c9ff',
+                      backgroundColor: '#c1c1c1',
                     }
                   : {
                       backgroundColor: '#fff',
@@ -156,12 +156,11 @@ export const DraftEditor = (): JSX.Element => {
           ))}
         </div>
       </div>
-      <div className="editor-inner">
+      <div className="content-container">
         <Editor
           editorState={editorState}
           onChange={setEditorState}
           handleKeyCommand={handleKeyCommand}
-          placeholder="내용을 입력하세요..."
           blockStyleFn={getBlockStyle}
         />
       </div>

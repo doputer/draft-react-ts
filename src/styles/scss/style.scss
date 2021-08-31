@@ -1,8 +1,10 @@
 .editor-container {
   flex: 1;
-  height: 100%;
-  border-right: 1px solid black;
+  border-radius: 8px;
+  margin: 10px;
   padding: 10px;
+  box-shadow: 0px 1px 4px rgba(19, 24, 48, 0.2);
+  font-family: 'Noto Sans KR';
 
   .toolbar-container {
     display: flex;
@@ -16,13 +18,13 @@
       padding: 4px;
 
       img {
-        width: 24px;
-        height: 24px;
+        width: 20px;
+        height: 20px;
       }
     }
   }
 
-  .editor-inner {
+  .content-container {
     .align-left div {
       text-align: left;
     }
@@ -36,7 +38,21 @@
     }
 
     blockquote {
-      border-left: 10px solid black;
+      border-left: 5px solid #2196f3;
+      background-color: #e3f2fd;
+      padding: 15px 10px 15px 20px;
+    }
+
+    pre {
+      color: #abb2bf;
+      padding: 10px 5px 10px 15px;
+
+      &:nth-of-type(odd) {
+        background-color: #282c34;
+      }
+      &:nth-of-type(even) {
+        background-color: #2d3138;
+      }
     }
   }
 }
