@@ -114,55 +114,55 @@ export const DraftEditor = (): JSX.Element => {
 
   return (
     <div className="editor-container">
-      <div className="toolbar-container">
-        <div>
-          {blockButtonOptions.map((buttonOption, index) => (
-            <button
-              className="toolbar-inner"
-              onMouseDown={(e) => handleBlockClick(e, buttonOption.action)}
-              key={index}
-              style={
-                buttonOption.action === blockButton
-                  ? {
-                      backgroundColor: '#c1c1c1',
-                    }
-                  : {
-                      backgroundColor: '#fff',
-                    }
-              }
-            >
-              <img src={`/assets/icons/${buttonOption.name}`} alt="" />
-            </button>
-          ))}
+      <div className="editor-inner">
+        <div className="toolbar-container">
+          <div>
+            {blockButtonOptions.map((buttonOption, index) => (
+              <button
+                className="toolbar-inner"
+                onMouseDown={(e) => handleBlockClick(e, buttonOption.action)}
+                key={index}
+                style={
+                  buttonOption.action === blockButton
+                    ? {
+                        backgroundColor: '#c1c1c1',
+                      }
+                    : {
+                        backgroundColor: '#fff',
+                      }
+                }
+              >
+                <img src={`/assets/icons/${buttonOption.name}`} alt="" />
+              </button>
+            ))}
+            {toggleButtonOptions.map((buttonOption, index) => (
+              <button
+                className="toolbar-inner"
+                onMouseDown={(e) => handleTogggleClick(e, buttonOption.action)}
+                key={index}
+                style={
+                  toggleButton[buttonOption.action] === true
+                    ? {
+                        backgroundColor: '#c1c1c1',
+                      }
+                    : {
+                        backgroundColor: '#fff',
+                      }
+                }
+              >
+                <img src={`/assets/icons/${buttonOption.name}`} alt="" />
+              </button>
+            ))}
+          </div>
         </div>
-        <div>
-          {toggleButtonOptions.map((buttonOption, index) => (
-            <button
-              className="toolbar-inner"
-              onMouseDown={(e) => handleTogggleClick(e, buttonOption.action)}
-              key={index}
-              style={
-                toggleButton[buttonOption.action] === true
-                  ? {
-                      backgroundColor: '#c1c1c1',
-                    }
-                  : {
-                      backgroundColor: '#fff',
-                    }
-              }
-            >
-              <img src={`/assets/icons/${buttonOption.name}`} alt="" />
-            </button>
-          ))}
+        <div className="content-container">
+          <Editor
+            editorState={editorState}
+            onChange={setEditorState}
+            handleKeyCommand={handleKeyCommand}
+            blockStyleFn={getBlockStyle}
+          />
         </div>
-      </div>
-      <div className="content-container">
-        <Editor
-          editorState={editorState}
-          onChange={setEditorState}
-          handleKeyCommand={handleKeyCommand}
-          blockStyleFn={getBlockStyle}
-        />
       </div>
     </div>
   );

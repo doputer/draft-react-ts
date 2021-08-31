@@ -1,67 +1,72 @@
 .editor-container {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  border-radius: 8px;
-  margin: 10px;
-  padding: 10px;
-  -webkit-box-shadow: 0px 1px 4px rgba(19, 24, 48, 0.2);
-          box-shadow: 0px 1px 4px rgba(19, 24, 48, 0.2);
-  font-family: 'Noto Sans KR';
-}
-
-.editor-container .toolbar-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: 'Noto Sans KR';
+}
+
+.editor-container .editor-inner {
+  width: calc(100vw - 360px);
+  margin: 10px 0px 0px 0px;
+  padding: 10px;
+  -webkit-box-shadow: 0px 1px 4px rgba(19, 24, 48, 0.2);
+          box-shadow: 0px 1px 4px rgba(19, 24, 48, 0.2);
+  border-radius: 8px;
+}
+
+.editor-container .editor-inner .toolbar-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 10px;
 }
 
-.editor-container .toolbar-container .toolbar-inner {
+.editor-container .editor-inner .toolbar-container .toolbar-inner {
   border: none;
   border-radius: 4px;
   padding: 4px;
+  margin: 0px 4px;
 }
 
-.editor-container .toolbar-container .toolbar-inner img {
+.editor-container .editor-inner .toolbar-container .toolbar-inner img {
   width: 20px;
   height: 20px;
 }
 
-.editor-container .content-container .align-left div {
+.editor-container .editor-inner .content-container .align-left div {
   text-align: left;
 }
 
-.editor-container .content-container .align-center div {
+.editor-container .editor-inner .content-container .align-center div {
   text-align: center;
 }
 
-.editor-container .content-container .align-right div {
+.editor-container .editor-inner .content-container .align-right div {
   text-align: right;
 }
 
-.editor-container .content-container blockquote {
+.editor-container .editor-inner .content-container blockquote {
   border-left: 5px solid #2196f3;
   background-color: #e3f2fd;
   padding: 15px 10px 15px 20px;
 }
 
-.editor-container .content-container pre {
+.editor-container .editor-inner .content-container pre {
   color: #abb2bf;
-  padding: 10px 5px 10px 15px;
+  padding: 10px;
 }
 
-.editor-container .content-container pre:nth-of-type(odd) {
+.editor-container .editor-inner .content-container pre:nth-of-type(odd) {
   background-color: #282c34;
 }
 
-.editor-container .content-container pre:nth-of-type(even) {
+.editor-container .editor-inner .content-container pre:nth-of-type(even) {
   background-color: #2d3138;
 }
 /*# sourceMappingURL=style.css.map */

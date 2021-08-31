@@ -1,57 +1,62 @@
 .editor-container {
-  flex: 1;
-  border-radius: 8px;
-  margin: 10px;
-  padding: 10px;
-  box-shadow: 0px 1px 4px rgba(19, 24, 48, 0.2);
+  display: flex;
+  justify-content: center;
   font-family: 'Noto Sans KR';
 
-  .toolbar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
+  .editor-inner {
+    width: calc(100vw - 360px);
+    margin: 10px 0px 0px 0px;
+    padding: 10px;
+    box-shadow: 0px 1px 4px rgba(19, 24, 48, 0.2);
+    border-radius: 8px;
 
-    .toolbar-inner {
-      border: none;
-      border-radius: 4px;
-      padding: 4px;
+    .toolbar-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
 
-      img {
-        width: 20px;
-        height: 20px;
+      .toolbar-inner {
+        border: none;
+        border-radius: 4px;
+        padding: 4px;
+        margin: 0px 4px;
+
+        img {
+          width: 20px;
+          height: 20px;
+        }
       }
     }
-  }
 
-  .content-container {
-    .align-left div {
-      text-align: left;
-    }
-
-    .align-center div {
-      text-align: center;
-    }
-
-    .align-right div {
-      text-align: right;
-    }
-
-    blockquote {
-      border-left: 5px solid #2196f3;
-      background-color: #e3f2fd;
-      padding: 15px 10px 15px 20px;
-    }
-
-    pre {
-      color: #abb2bf;
-      padding: 10px 5px 10px 15px;
-
-      &:nth-of-type(odd) {
-        background-color: #282c34;
+    .content-container {
+      .align-left div {
+        text-align: left;
       }
-      &:nth-of-type(even) {
-        background-color: #2d3138;
+
+      .align-center div {
+        text-align: center;
+      }
+
+      .align-right div {
+        text-align: right;
+      }
+
+      blockquote {
+        border-left: 5px solid #2196f3;
+        background-color: #e3f2fd;
+        padding: 15px 10px 15px 20px;
+      }
+
+      pre {
+        color: #abb2bf;
+        padding: 10px;
+
+        &:nth-of-type(odd) {
+          background-color: #282c34;
+        }
+        &:nth-of-type(even) {
+          background-color: #2d3138;
+        }
       }
     }
   }
